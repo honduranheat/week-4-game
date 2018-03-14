@@ -1,0 +1,66 @@
+.masthead {
+    height: 50px;
+    border: solid 1px black;
+    margin: 15px 25% 15px 25%;
+    text-align: center;
+    font-size: 30px;
+    padding-top:10px;
+    
+}
+
+.instructions {
+    height: 50px;
+    border: solid 1px black;
+    margin: 15px 25% 15px 25%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+.currentNumber {
+    height: 50px;
+    width: 400px;
+    border: solid 1px black;
+    margin: 15px;
+    margin-left: 25%;
+    margin-bottom: 15px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: inline-block;
+    
+    
+}
+
+.winLoss {
+    height: 50px;
+    width: 245px;
+    margin: 15px;
+    margin-right: 25%;
+    border: solid 1px black;
+    display: inline-block;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
+
+.buttonSection {
+    display: inline-block;
+    border: solid 1px black;
+    margin: 15px 19% 15px 35%;
+   
+}
+
+button {
+    width:100px;
+    height: 100px;
+    /*background-image: url('../images/kyber1.jpeg');
+    background-size: 100px 100px;
+    background-repeat: no-repeat;*/
+    margin: 25px auto;
+    float: center;
+}
+
