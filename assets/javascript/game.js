@@ -5,6 +5,7 @@ Create Variables
     -Variable for a random number that shows on the screen between 19-120 
         -Random Number does not show until first click
     -Each crystal will have hidden value between 1-12
+Make values appear and add to total score
 Function that adds images to buttons
 
 When a crystal is clicked, it will add the crystal value to the score
@@ -21,18 +22,18 @@ When a crystal is clicked, it will add the crystal value to the score
 
 //Variables
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-var score = 0;
-var wins = 0;
-var losses = 0;  
 
+var score = 0;
     //Main Random Value
 var lotteryValue = Math.floor(Math.random() * 120) + 19;
 
-    //Random Crystal Values
-var crystalValue1 = Math.floor(Math.random() * 12) + 1;
-var crystalValue2 = Math.floor(Math.random() * 12) + 1;
-var crystalValue3 = Math.floor(Math.random() * 12) + 1;
-var crystalValue4 = Math.floor(Math.random() * 12) + 1;
+    //Random Crystal Value
+    var crystalValue1 = Math.floor(Math.random() * 12) + 1;
+    var crystalValue2 = Math.floor(Math.random() * 12) + 1;
+    var crystalValue3 = Math.floor(Math.random() * 12) + 1;
+    var crystalValue4 = Math.floor(Math.random() * 12) + 1;
+
+
 
     /*
     //Random Pictures for Buttons COME BACK TO THIS USING CSS RIGHT NOW
@@ -48,26 +49,72 @@ var crystalValue4 = Math.floor(Math.random() * 12) + 1;
 //jQuery
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $(document).ready(function() {
+    
+    var wins = 0;
+    var losses = 0;  
+    var gameState = "";
+    var score = 0;
+    var lotteryValue = Math.floor(Math.random() * 120) + 19;
+    var crystalValue1 = Math.floor(Math.random() * 12) + 1;
+    var crystalValue2 = Math.floor(Math.random() * 12) + 1;
+    var crystalValue3 = Math.floor(Math.random() * 12) + 1;
+    var crystalValue4 = Math.floor(Math.random() * 12) + 1;
+    
+    $('.currentNumber').text(lotteryValue);
+    $('.winTotal').text('Wins: ' + wins);
+    $('.lossTotal').text('Losses: ' + losses);
+
+    //Buttons
+    $("button").val(crystalValue1,crystalValue1, crystalValue1,crystalValue1);
+    
+    $(".btn1").click(function () {     
+        score += crystalValue1; 
+        $('.scoreBox').text('Your Score: ' + score);    
+           
+        if(score >= lotteryValue) {
+            alert('Win');
+            wins++;
+            $('.winTotal').text('Wins: '+ wins);
+            
+            $('.scoreBox').text('Your Score: ' + (score = 0));
+        }
+    }); 
+    $(".btn2").click(function () {  
+        score +=crystalValue2; 
+        $('.scoreBox').text('Your Score: ' + score);
+        if(score >= lotteryValue) {
+            alert('Win');
+            wins++;
+            $('.winTotal').text('Wins: '+ wins);
+            
+            $('.scoreBox').text('Your Score: ' + (score = 0));
+        }
+        }); 
+    $(".btn3").click(function () {  
+        score += crystalValue3;
+        $('.scoreBox').text('Your Score: ' + score);
+        if(score >= lotteryValue) {
+            alert('Win');
+            wins++;
+            $('.winTotal').text('Wins: '+ wins);
+            
+            $('.scoreBox').text('Your Score: ' + (score = 0));
+        }
+    }); 
+    $(".btn4").click(function () {  
+        score += crystalValue4;   
+        $('.winTotal').text('Wins: '+ wins);
+        $('.scoreBox').text('Your Score: ' + (score = 0)); 
+              
+    }); 
 
     
-        
-    $("button").on("click", function () {
-        $(".btn1").val(crystalValue2);
-        $(".btn2").val(crystalValue2);    
-        $(".btn3").val(crystalValue3);
-        $(".btn4").val(crystalValue4);   
-             
-    }); 
+
+    console.log(score);
 });
 
-console.log(lotteryValue);
-console.log(crystalValue1);
-console.log(crystalValue2);
-console.log(crystalValue3);
-console.log(crystalValue4);
-console.log(randomImg1);
-console.log(randomImg2);
-console.log(randomImg3);
-console.log(randomImg4);
+
+
+
 
 
