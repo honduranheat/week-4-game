@@ -69,43 +69,72 @@ $(document).ready(function() {
     
     $(".btn1").click(function () {     
         score += crystalValue1; 
-        $('.scoreBox').text('Your Score: ' + score);    
-           
-        if(score >= lotteryValue) {
+        $('.scoreBox').text('Your Score: ' + score);     
+        if(score == lotteryValue) {
             alert('Win');
             wins++;
             $('.winTotal').text('Wins: '+ wins);
-            
             $('.scoreBox').text('Your Score: ' + (score = 0));
+            $('.currentNumber').text(lotteryValue);
+        } else if (score > lotteryValue) {
+            alert('lose');
+            losses++;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
+            $('.lossTotal').text('Losses: ' + losses);
+            $('.scoreBox').text('Your Score: ' + (score=0));
+            $('.currentNumber').text(lotteryValue);
         }
     }); 
     $(".btn2").click(function () {  
         score +=crystalValue2; 
         $('.scoreBox').text('Your Score: ' + score);
-        if(score >= lotteryValue) {
+        if(score == lotteryValue) {
             alert('Win');
             wins++;
             $('.winTotal').text('Wins: '+ wins);
-            
             $('.scoreBox').text('Your Score: ' + (score = 0));
+            $('.currentNumber').text(lotteryValue);
+        } else if (score > lotteryValue) {
+            alert('lose');
+            losses++;
+            $('.lossTotal').text('Losses: ' + losses);
+            $('.scoreBox').text('Your Score: ' + (score=0));
+            $('.currentNumber').text(lotteryValue);
         }
         }); 
     $(".btn3").click(function () {  
         score += crystalValue3;
         $('.scoreBox').text('Your Score: ' + score);
-        if(score >= lotteryValue) {
+        if(score == lotteryValue) {
             alert('Win');
             wins++;
             $('.winTotal').text('Wins: '+ wins);
-            
             $('.scoreBox').text('Your Score: ' + (score = 0));
+            $('.currentNumber').text(lotteryValue);
+        } else if (score > lotteryValue) {
+            alert('lose');
+            losses++;
+            $('.lossTotal').text('Losses: ' + losses);
+            $('.scoreBox').text('Your Score: ' + (score=0));
+            $('.currentNumber').text(lotteryValue);
         }
     }); 
     $(".btn4").click(function () {  
-        score += crystalValue4;   
-        $('.winTotal').text('Wins: '+ wins);
-        $('.scoreBox').text('Your Score: ' + (score = 0)); 
-              
+        score += crystalValue3;
+        $('.scoreBox').text('Your Score: ' + score);
+        if(score == lotteryValue) {
+            alert('Win');
+            wins++;
+            $('.winTotal').text('Wins: '+ wins);
+            $('.scoreBox').text('Your Score: ' + (score = 0));
+            $('.currentNumber').text(lotteryValue);
+        } else if (score > lotteryValue) {
+            alert('lose');
+            losses++;
+            $('.lossTotal').text('Losses: ' + losses);
+            $('.scoreBox').text('Your Score: ' + (score=0));
+            $('.currentNumber').text(lotteryValue);
+        }
     }); 
 
     
