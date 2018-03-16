@@ -52,7 +52,7 @@ $(document).ready(function() {
     
     var wins = 0;
     var losses = 0;  
-    var gameState = "";
+    
     var score = 0;
     var lotteryValue = Math.floor(Math.random() * 120) + 19;
     var crystalValue1 = Math.floor(Math.random() * 12) + 1;
@@ -73,16 +73,22 @@ $(document).ready(function() {
         if(score == lotteryValue) {
             alert('Win');
             wins++;
+            crystalValue1 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.winTotal').text('Wins: '+ wins);
             $('.scoreBox').text('Your Score: ' + (score = 0));
             $('.currentNumber').text(lotteryValue);
+            $("button").val(crystalValue1,crystalValue1, crystalValue1,crystalValue1);
+
         } else if (score > lotteryValue) {
             alert('lose');
             losses++;
+            crystalValue1 = Math.floor(Math.random() * 12) + 1;
             lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.lossTotal').text('Losses: ' + losses);
             $('.scoreBox').text('Your Score: ' + (score=0));
             $('.currentNumber').text(lotteryValue);
+            $("button").val(crystalValue1,crystalValue1, crystalValue1,crystalValue1);
         }
     }); 
     $(".btn2").click(function () {  
@@ -91,12 +97,16 @@ $(document).ready(function() {
         if(score == lotteryValue) {
             alert('Win');
             wins++;
+            crystalValue2 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.winTotal').text('Wins: '+ wins);
             $('.scoreBox').text('Your Score: ' + (score = 0));
             $('.currentNumber').text(lotteryValue);
         } else if (score > lotteryValue) {
             alert('lose');
             losses++;
+            crystalValue2 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.lossTotal').text('Losses: ' + losses);
             $('.scoreBox').text('Your Score: ' + (score=0));
             $('.currentNumber').text(lotteryValue);
@@ -108,12 +118,16 @@ $(document).ready(function() {
         if(score == lotteryValue) {
             alert('Win');
             wins++;
+            crystalValue3 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.winTotal').text('Wins: '+ wins);
             $('.scoreBox').text('Your Score: ' + (score = 0));
             $('.currentNumber').text(lotteryValue);
         } else if (score > lotteryValue) {
             alert('lose');
             losses++;
+            crystalValue3 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.lossTotal').text('Losses: ' + losses);
             $('.scoreBox').text('Your Score: ' + (score=0));
             $('.currentNumber').text(lotteryValue);
@@ -125,12 +139,16 @@ $(document).ready(function() {
         if(score == lotteryValue) {
             alert('Win');
             wins++;
+            crystalValue4 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.winTotal').text('Wins: '+ wins);
             $('.scoreBox').text('Your Score: ' + (score = 0));
             $('.currentNumber').text(lotteryValue);
         } else if (score > lotteryValue) {
             alert('lose');
             losses++;
+            crystalValue4 = Math.floor(Math.random() * 12) + 1;
+            lotteryValue = Math.floor(Math.random() * 120) + 19;
             $('.lossTotal').text('Losses: ' + losses);
             $('.scoreBox').text('Your Score: ' + (score=0));
             $('.currentNumber').text(lotteryValue);
