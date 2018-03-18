@@ -32,6 +32,21 @@ $(document).ready(function() {
     var crystalValue3 = Math.floor(Math.random() * 12) + 1;
     var crystalValue4 = Math.floor(Math.random() * 12) + 1;
 
+
+     //var numberArr = [];
+    // 
+    // "One copy of loop in ready function and one in reset, remember to clear the array in reset function"
+    //     for (i = 0; i < 3; i++) {
+    //         var randomNum = Math.floor(Math.random() * 12) + 1;
+    //         numberArr.push(randomNum);
+    //     }
+    // 
+    
+   // eg numberArr = [4, 8, 9, 12] numberArr[0] = 4, etc...  
+
+    
+
+
     $('.currentNumber').text(lotteryValue);
     $('.winTotal').text('Wins: ' + wins);
     $('.lossTotal').text('Losses: ' + losses);
@@ -45,7 +60,10 @@ $(document).ready(function() {
         if(score == lotteryValue) {
             alert('You Win');
             wins++;
+
+
             reset();
+
         } else if (score > lotteryValue) {
             alert('You Lose');
             losses++;
@@ -100,17 +118,16 @@ $(document).ready(function() {
             reset();
         }   
     });
-//Reset
-/////////////////////////////////////////////////////////////////////////////
+    
     function reset() {
         lotteryValue = Math.floor(Math.random() * 120) + 19;
-        $('.lossTotal').text('Losses: ' + losses);
-        $('.scoreBox').text('Your Score: ' + (score=0));
-        $('.currentNumber').text(lotteryValue);
-        crystalValue1 = Math.floor(Math.random() * 12) + 1;
-        crystalValue2 = Math.floor(Math.random() * 12) + 1;
-        crystalValue3 = Math.floor(Math.random() * 12) + 1;
-        crystalValue4 = Math.floor(Math.random() * 12) + 1;
+            $('.lossTotal').text('Losses: ' + losses);
+            $('.scoreBox').text('Your Score: ' + (score=0));
+            $('.currentNumber').text(lotteryValue);
+            crystalValue1 = Math.floor(Math.random() * 12) + 1;
+            crystalValue2 = Math.floor(Math.random() * 12) + 1;
+            crystalValue3 = Math.floor(Math.random() * 12) + 1;
+            crystalValue4 = Math.floor(Math.random() * 12) + 1;
     };
 });
 
