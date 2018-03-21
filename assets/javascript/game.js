@@ -36,11 +36,9 @@ $(document).ready(function() {
     $('.winTotal').text('Wins: ' + wins);
     $('.lossTotal').text('Losses: ' + losses);
     $("button").val(crystalValue1, crystalValue2, crystalValue3, crystalValue4);
-     
-//Button 1
-////////////////////////////////////////////////////////////////////////////
-    $(".btn1").click(function () {     
-        score += crystalValue1; 
+
+    function winLose(value) {
+        score += value;  
         $('.scoreBox').text('Your Score: ' + score);     
         if(score == lotteryValue) {
             alert('You Win');
@@ -50,55 +48,32 @@ $(document).ready(function() {
             alert('You Lose');
             losses++;
             reset();
-        }      
+        }  
+    }
+     
+//Button 1
+////////////////////////////////////////////////////////////////////////////
+    $(".btn1").click(function () {     
+        
+        winLose(crystalValue1);    
     }); 
 
 //Button 2
 ///////////////////////////////////////////////////////////////////////////////
     $(".btn2").click(function () {  
-        score +=crystalValue2; 
-        $('.scoreBox').text('Your Score: ' + score);
-        if(score == lotteryValue) {
-            wins++;
-            alert('You Win');
-            reset();
-        } else if (score > lotteryValue) {
-            losses++;
-            alert('You Lose');
-            reset();
-        }
+        winLose(crystalValue2);
     }); 
 
 //Button 3
 /////////////////////////////////////////////////////////////////////////
     $(".btn3").click(function () {  
-        score += crystalValue3;
-        $('.scoreBox').text('Your Score: ' + score);
-        if(score == lotteryValue) {
-            wins++;
-            alert('You Win');
-            reset();
-        } else if (score > lotteryValue) {
-            losses++;
-            alert('You Lose');
-            reset();
-        }  
+        winLose(crystalValue3);  
     }); 
 
 //Button 4
 ////////////////////////////////////////////////////////////////////////////
     $(".btn4").click(function () {  
-        score += crystalValue4;
-        $('.scoreBox').text('Your Score: ' + score);
-        if(score == lotteryValue) { 
-            wins++;
-            alert('You Win');
-            reset();
-        } else if (score > lotteryValue) {
-            losses++;
-            alert('You Lose');
-            reset();
-        }   
+        winLose(crystalValue4);   
     });
 //Reset
 /////////////////////////////////////////////////////////////////////////////
